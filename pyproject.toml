@@ -1,0 +1,39 @@
+[project]
+name = "stradivarius"
+version = "0.1.0"
+description = "stradivarius: browse and compose Spotify playlists from the terminal"
+authors = [{name = "pstfni", email = "x@y.com"}]
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = ["Private :: Do Not Upload"]
+
+dependencies = [
+    "chopin",
+    "click",
+    "textual",
+    "polars",
+    "catppuccin[textual]",
+]
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest", "pytest-asyncio"]
+docs = ["zensical"]
+
+[project.scripts]
+stradivarius = "stradivarius.cli:app"
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+chopin = {path = "../chopin", editable = true}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
