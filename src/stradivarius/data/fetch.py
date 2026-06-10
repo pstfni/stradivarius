@@ -1,11 +1,14 @@
 from pathlib import Path
 
 import polars as pl
+import logging
 
 from stradivarius.constants import LIBRARY_PATH
 from stradivarius.data.schema import TrackRow
 from chopin.client.endpoints import get_playlist_tracks, get_user_playlists
 
+
+logger = logging.Logger(__name__)
 
 def fetch_library(output_path: Path = LIBRARY_PATH) -> pl.DataFrame:
     """Use chopin to fetch the user _library_, all its playlists.
@@ -20,6 +23,7 @@ def fetch_library(output_path: Path = LIBRARY_PATH) -> pl.DataFrame:
 
     rows: list[TrackRow] = []
     for playlist in get_user_playlists():
+        logger.info(f"Parsing playlist {playlist.name}")
         for track in get_playlist_tracks(playlist.id):
             rows.append(
                 TrackRow(
