@@ -6,7 +6,7 @@ import logging
 from stradivarius.constants import LIBRARY_PATH
 from stradivarius.data.schema import TrackRow
 from chopin.client.endpoints import get_playlist_tracks, get_user_playlists
-
+from chopin.constants import constants
 
 logger = logging.Logger(__name__)
 
@@ -23,6 +23,8 @@ def fetch_library(output_path: Path = LIBRARY_PATH) -> pl.DataFrame:
 
     rows: list[TrackRow] = []
     for playlist in get_user_playlists():
+        if playlist.id not in constants.PROTECTED_PLAYLISTS_ID:
+            continue
         logger.info(f"Parsing playlist {playlist.name}")
         for track in get_playlist_tracks(playlist.id):
             rows.append(

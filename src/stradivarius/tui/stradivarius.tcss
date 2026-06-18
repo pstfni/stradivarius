@@ -1,0 +1,96 @@
+/* Catppuccin Mocha */
+$base:    #1e1e2e;
+$mantle:  #181825;
+$crust:   #11111b;
+$surface0: #313244;
+$surface1: #45475a;
+$overlay1: #7f849c;
+$text:    #cdd6f4;
+$subtext1: #bac2de;
+$lavender: #b4befe;
+$blue:    #89b4fa;
+$green:   #a6e3a1;
+$red:     #f38ba8;
+$peach:   #fab387;
+
+Screen {
+    background: $base;
+    color: $text;
+}
+
+DataTable {
+    background: $base;
+    color: $text;
+}
+
+DataTable > .datatable--header {
+    background: $mantle;
+    color: $lavender;
+    text-style: bold;
+}
+
+DataTable > .datatable--cursor {
+    background: $surface1;
+    color: $text;
+}
+
+DataTable > .datatable--fixed {
+    background: $mantle;
+}
+
+#status-bar {
+    dock: bottom;
+    background: $mantle;
+    color: $subtext1;
+    height: 1;
+    padding: 0 1;
+}
+
+#filter-bar {
+    dock: bottom;
+    offset-y: -1;
+    height: 1;
+    padding: 0 1;
+    background: $surface0;
+    color: $text;
+    border: none;
+    display: none;
+}
+
+#filter-bar.visible {
+    display: block;
+}
+
+#filter-bar:focus {
+    background: $surface0;
+    border: none;
+}
+
+BufferScreen {
+    align: center middle;
+}
+
+#buffer-dialog {
+    width: 70%;
+    max-width: 90;
+    height: auto;
+    max-height: 80%;
+    padding: 1 2;
+    background: $mantle;
+    border: round $surface1;
+}
+
+#buffer-title {
+    width: 100%;
+    text-align: center;
+    color: $lavender;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+#buffer-table {
+    height: auto;
+    max-height: 20;
+    background: $mantle;
+    color: $text;
+}
