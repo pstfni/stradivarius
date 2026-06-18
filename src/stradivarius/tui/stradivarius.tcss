@@ -66,7 +66,7 @@ DataTable > .datatable--fixed {
     border: none;
 }
 
-BufferScreen {
+BufferScreen, ComposeScreen {
     align: center middle;
 }
 
@@ -93,4 +93,51 @@ BufferScreen {
     max-height: 20;
     background: $mantle;
     color: $text;
+}
+
+#compose-dialog {
+    width: 50;
+    height: auto;
+    padding: 1 2;
+    background: $mantle;
+    border: round $surface1;
+}
+
+#compose-title {
+    width: 100%;
+    text-align: center;
+    color: $lavender;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+#compose-dialog Input {
+    margin-bottom: 1;
+    background: $surface0;
+    border: tall $surface1;
+    color: $text;
+}
+
+#compose-dialog Input:focus {
+    border: tall $lavender;
+}
+
+#compose-actions {
+    width: 100%;
+    height: auto;
+    align: right middle;
+    margin-top: 1;
+}
+
+#compose-actions Button {
+    min-width: 10;
+    margin-left: 1;
+    background: $surface0;
+    color: $text;
+    border: none;
+}
+
+#compose-actions Button#create {
+    background: $lavender;
+    color: $crust;
 }
