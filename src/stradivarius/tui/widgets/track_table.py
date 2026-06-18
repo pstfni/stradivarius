@@ -75,7 +75,9 @@ class TrackTable(DataTable):
 
     def set_buffered(self, uris: set[str]) -> None:
         self._buffered_uris = set(uris)
+        coordinate = self.cursor_coordinate
         self._rebuild()
+        self.move_cursor(row=coordinate.row, column=coordinate.column)
 
     # --- sorting ---
 
