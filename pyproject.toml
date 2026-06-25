@@ -5,7 +5,6 @@ description = "stradivarius: browse and compose Spotify playlists from the termi
 authors = [{name = "pstfni", email = "x@y.com"}]
 readme = "README.md"
 requires-python = ">=3.12"
-classifiers = ["Private :: Do Not Upload"]
 
 dependencies = [
     "chopin",
