@@ -7,10 +7,7 @@ repo_url = "https://github.com/pstfni/stradivarius"
 repo_name = "pstfni/stradivarius"
 
 docs_dir = "docs"
-
-extra_css = [".docs_theme/assets/stylesheets/custom.css"]
-
-nav = ["PLAN.md"]
+nav = ["index.md"]
 
 [project.theme]
 language = "en"
