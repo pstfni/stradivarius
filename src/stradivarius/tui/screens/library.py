@@ -13,6 +13,7 @@ class LibraryScreen(Screen):
     BINDINGS = [
         ("q", "quit", "Quit"),
         ("s", "sort", "Sort"),
+        ("h", "shuffle", "Shuffle"),
         ("space", "select_track", "Add to buffer"),
         ("b", "toggle_buffer", "Buffer"),
         ("p", "compose_playlist", "New playlist"),
@@ -41,6 +42,9 @@ class LibraryScreen(Screen):
 
     def action_sort(self) -> None:
         self.query_one(TrackTable).toggle_sort()
+
+    def action_shuffle(self) -> None:
+        self.query_one(TrackTable).shuffle()
 
     def action_select_track(self) -> None:
         table = self.query_one(TrackTable)

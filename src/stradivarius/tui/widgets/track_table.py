@@ -79,7 +79,11 @@ class TrackTable(DataTable):
         self._rebuild()
         self.move_cursor(row=coordinate.row, column=coordinate.column)
 
-    # --- sorting ---
+    # --- sorting / shuffling ---
+
+    def shuffle(self) -> None:
+        self._filtered_df = self._filtered_df.sample(fraction=1.0, shuffle=True)
+        self._rebuild()
 
     def toggle_sort(self) -> None:
         col = self.current_column()
@@ -90,7 +94,7 @@ class TrackTable(DataTable):
         else:
             self._sort_col = col
             self._sort_asc = True
-        self._refresh()
+        self._refresh()        
 
     # --- filtering ---
 
